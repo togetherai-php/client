@@ -1,11 +1,10 @@
 <?php
 
-namespace TogetherAI;
+namespace TogetherAI\Client;
 
 use GuzzleHttp\Psr7\Header;
 use Http\Discovery\Psr18ClientDiscovery;
 use Psr\Http\Client\ClientInterface;
-use TogetherAI\Client\Client;
 use TogetherAI\Transporters\HttpTransporter;
 use TogetherAI\ValueObjects\ApiKey;
 use TogetherAI\ValueObjects\Transporter\BaseUri;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TogetherAI\Client;
+namespace TogetherAI;
 
 final class TogetherAI
 {

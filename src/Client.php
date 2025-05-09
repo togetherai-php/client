@@ -1,6 +1,6 @@
 <?php
 
-namespace TogetherAI\Client;
+namespace TogetherAI;
 
 use TogetherAI\Contracts\ClientContract;
 use TogetherAI\Contracts\Resources\ChatContract;

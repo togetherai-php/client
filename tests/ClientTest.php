@@ -1,6 +1,6 @@
 <?php
 
-namespace TogetherAI\Client\Tests;
+namespace TogetherAI\Tests;
 
 use PHPUnit\Framework\TestCase;
 

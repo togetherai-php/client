@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-namespace TogetherAI;
+use TogetherAI\Client;
+use TogetherAI\Factory;
 
 final class TogetherAI
 {

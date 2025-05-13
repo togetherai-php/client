@@ -25,6 +25,52 @@ final class Payload
         //
     }
 
+    /**
+     * Creates a new Payload value object from the given parameters.
+     *
+     * @param  array<string, mixed>  $parameters
+     */
+    public static function list(string $resource, array $paramters = []): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::GET;
+        $uri = ResourceUri::list($resource);
+
+        return new self($contentType, $method, $uri, $paramters);
+    }
+
+    /**
+     * Creates a new Payload value object from the given parameters.
+     *
+     * @param  array<string, mixed>  $parameters
+     */
+    public static function retrieve(string $resource, string $id, string $suffix = '', array $paramters = []): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::GET;
+        $uri = ResourceUri::retrieve($resource, $id, $suffix);
+
+        return new self($contentType, $method, $uri, $paramters);
+    }
+
+    public static function modify(string $resource, string $id, array $parameters = []): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::POST;
+        $uri = ResourceUri::modify($resource, $id);
+
+        return new self($contentType, $method, $uri, $parameters);
+    }
+
+    public static function retrieveContent(string $resource, string $id): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::GET;
+        $uri = ResourceUri::retrieveContent($resource, $id);
+
+        return new self($contentType, $method, $uri);
+    }
+
     public static function create(string $resource, array $paramters): self
     {
         $contentType = ContentType::JSON;
@@ -32,6 +78,33 @@ final class Payload
         $uri = ResourceUri::create($resource);
 
         return new self($contentType, $method, $uri, $paramters);
+    }
+
+    public static function upload(string $resource, array $parameters): self
+    {
+        $contentType = ContentType::MULTIPART;
+        $method = Method::POST;
+        $uri = ResourceUri::upload($resource);
+
+        return new self($contentType, $method, $uri, $parameters);
+    }
+
+    public static function cancel(string $resource, string $id): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::POST;
+        $uri = ResourceUri::cancel($resource, $id);
+
+        return new self($contentType, $method, $uri);
+    }
+
+    public static function delete(string $resource, string $id): self
+    {
+        $contentType = ContentType::JSON;
+        $method = Method::DELETE;
+        $uri = ResourceUri::delete($resource, $id);
+
+        return new self($contentType, $method, $uri);
     }
 
     /**

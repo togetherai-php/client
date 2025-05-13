@@ -1,6 +1,6 @@
 <?php
 
-namespace TogetherAI\Client;
+namespace TogetherAI;
 
 use GuzzleHttp\Psr7\Header;
 use Http\Discovery\Psr18ClientDiscovery;

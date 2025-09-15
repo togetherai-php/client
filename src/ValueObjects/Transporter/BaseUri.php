@@ -11,10 +11,9 @@ final class BaseUri implements StringableContract
     /**
      * Creates base URI value object
      */
-    private function __construct(private readonly string $baseUri)
-    {
-        //
-    }
+    private function __construct(
+        private readonly string $baseUri
+    ) {}
 
     public static function from(string $baseUri): self
     {

@@ -35,8 +35,11 @@
     },
     "autoload": {
         "psr-4": {
-            "TogetherAI\\Client\\": "src"
-        }
+            "TogetherAI\\": "src"
+        },
+        "files": [
+            "src/TogetherAI.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
